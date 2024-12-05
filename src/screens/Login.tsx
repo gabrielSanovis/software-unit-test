@@ -33,29 +33,39 @@ export default function LoginScreen() {
       <Text>Autenticação</Text>
       <Field.Root>
         <Field.Label>Email</Field.Label>
-        <Field.Input
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-        />
+        <Field.InputRoot>
+          <Field.InputRead
+            placeholder="Email"
+            value={email}
+            onChangeText={setEmail}
+          />
+
+        </Field.InputRoot>
       </Field.Root>
 
       <Field.Root>
         <Field.Label>Senha</Field.Label>
-        <Field.Input
-          placeholder="Senha"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
-        <Field.Feedback type='wrong' show={!!error}>{error}</Field.Feedback>
+        <Field.InputRoot>
+          <Field.InputRead
+            placeholder="Senha"
+            value={password}
+            onChangeText={setPassword}
+            secureTextEntry
+          />
+        </Field.InputRoot>
+        <Field.Feedback
+          type='wrong'
+          show={!!error}
+        >
+          {error}
+        </Field.Feedback>
       </Field.Root>
 
       <View style={styles.wrapperBtn}>
         <Button.Root onPress={handleLogin}>
           <Button.Title>Entrar</Button.Title>
         </Button.Root>
-        
+
         <Button.Root onPress={goToRegister}>
           <Button.Title>Cadastro</Button.Title>
         </Button.Root>

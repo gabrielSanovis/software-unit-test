@@ -12,5 +12,5 @@ export const Root = ({children}: RootProps) => {
 };
 
 const styles = StyleSheet.create({
-    root: { alignItems: "flex-start"},
+    root: { alignItems: "flex-start", rowGap: 4 },
 });
