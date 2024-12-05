@@ -1,14 +1,15 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, ViewProps } from "react-native";
 
 type RootProps = {
     onPress: () => void,
     children: React.ReactNode
-}
+} & ViewProps;
 
-export const Root = ({ onPress, children }: RootProps) => {
+export const Root = ({ onPress, children, ...rest }: RootProps) => {
     return (
         <TouchableOpacity
+            {...rest}
             onPress={onPress}
             style={styles.root}
         >

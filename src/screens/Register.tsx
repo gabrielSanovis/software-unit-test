@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/Button';
+import { Field } from '../components/Field';
 
 export default function RegisterScreen({ navigation }: any) {
   const { registerNewUser } = useAuth();
@@ -20,16 +21,27 @@ export default function RegisterScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text>Cadastro</Text>
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} style={styles.input} />
-      <TextInput
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-        style={styles.input}
-      />
-      {error && <Text style={styles.error}>{error}</Text>}
-      <Button.Root onPress={handleRegister}>
+      <Field.Root>
+        <Field.Label>Email</Field.Label>
+        <Field.Input
+          placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
+        />
+      </Field.Root>
+
+      <Field.Root>
+        <Field.Label>Senha</Field.Label>
+        <Field.Input
+          placeholder="Senha"
+          value={password}
+          onChangeText={setPassword}
+          secureTextEntry
+        />
+        <Field.Feedback type='wrong' show={!!error}>{error}</Field.Feedback>
+      </Field.Root>
+
+      <Button.Root testID="register" onPress={handleRegister}>
           <Button.Title>Cadastrar-se</Button.Title>
         </Button.Root>
     </View>

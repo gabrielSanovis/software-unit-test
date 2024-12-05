@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/Button';
 import { useNavigation } from '@react-navigation/native';
@@ -55,6 +55,7 @@ export default function LoginScreen() {
         <Button.Root onPress={handleLogin}>
           <Button.Title>Entrar</Button.Title>
         </Button.Root>
+        
         <Button.Root onPress={goToRegister}>
           <Button.Title>Cadastro</Button.Title>
         </Button.Root>

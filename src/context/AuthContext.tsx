@@ -1,5 +1,4 @@
 import React, { createContext, useState, ReactNode } from 'react';
-import { isValidEmail } from '../utils/isValidEmail';
 import { register } from '../application/register';
 
 export interface User {
