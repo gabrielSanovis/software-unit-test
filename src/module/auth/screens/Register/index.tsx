@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { useAuth } from '../context/AuthContext';
-import { Button } from '../components/Button';
-import { Field } from '../components/Field';
+import { View, Text, StyleSheet } from 'react-native';
+import { useAuth } from '../../../../context/AuthContext';
+import { Button } from '../../../../components/Button';
+import { Field } from '../../../../components/Field';
 
 export default function RegisterScreen({ navigation }: any) {
   const { registerNewUser } = useAuth();
@@ -53,9 +53,12 @@ export default function RegisterScreen({ navigation }: any) {
 
       <Button.Root
         testID="register"
+        variant='danger'
         onPress={handleRegister}
+        isDisabled={false} 
+        isLoading={false}
       >
-        <Button.Title>Cadastrar-se</Button.Title>
+        <Button.Title>Cadastrar</Button.Title>
       </Button.Root>
     </View>
   );

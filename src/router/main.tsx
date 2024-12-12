@@ -1,9 +1,9 @@
 import React from "react"
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../screens/Login';
-import RegisterScreen from '../screens/Register';
-import SuccessScreen from '../screens/Success';
+import RegisterScreen from '../module/auth/screens/Register';
 import { NavigationProp } from "@react-navigation/native";
+import LoginScreen from "../module/auth/screens/Login";
+import SuccessScreen from "../module/welcome/screens/Success";
 
 export type ScreenNames = ["Login", "Register", "Success"]
 export type MainStackParamList = Record<ScreenNames[number], undefined>;

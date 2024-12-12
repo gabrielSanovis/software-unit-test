@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useAuth } from '../context/AuthContext';
-import { Button } from '../components/Button';
+import { useAuth } from '../../../../context/AuthContext';
+import { Button } from '../../../../components/Button';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { MainStackParamList } from '../router/main';
-import { Field } from '../components/Field';
+import { MainStackParamList } from '../../../../router/main';
+import { Field } from '../../../../components/Field';
 
 type NavigationProps = NativeStackNavigationProp<MainStackParamList, "Login">
 
@@ -62,12 +62,18 @@ export default function LoginScreen() {
       </Field.Root>
 
       <View style={styles.wrapperBtn}>
-        <Button.Root onPress={handleLogin}>
+        <Button.Root
+          onPress={handleLogin}
+          variant='primary'
+        >
           <Button.Title>Entrar</Button.Title>
         </Button.Root>
 
-        <Button.Root onPress={goToRegister}>
-          <Button.Title>Cadastro</Button.Title>
+        <Button.Root
+          onPress={goToRegister}
+          variant='outline'
+        >
+          <Button.Title>Cadastrar</Button.Title>
         </Button.Root>
       </View>
     </View>
